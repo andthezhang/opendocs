@@ -1,11 +1,8 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
-import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { FeaturedCard } from '@/components/featured-card'
 import { Announcement } from '@/components/announcement'
 import { buttonVariants } from '@/components/ui/button'
-import { FlipWords } from '@/components/ui/flip-words'
-import { Vortex } from '@/components/ui/vortex'
 import { Icons } from '@/components/icons'
 import { siteConfig } from '@/config/site'
 import { Link } from '@/navigation'
@@ -35,16 +32,6 @@ export default async function IndexPage({
     <div className="container relative">
       <PageHeader>
         <Announcement title={t('site.announcement')} href="/docs" />
-
-        <PageHeaderHeading>
-          <FlipWords
-            words={['site', 'blog', 'docs']}
-            className="text-9xl -z-10"
-          />
-
-          <TextGenerateEffect words={t('site.heading')} />
-        </PageHeaderHeading>
-
         <PageHeaderDescription>{t('site.description')}</PageHeaderDescription>
 
         <PageActions>
@@ -63,17 +50,6 @@ export default async function IndexPage({
             {siteConfig.links.github.label}
           </Link>
         </PageActions>
-
-        <div className="fixed left-0 -top-40 size-full -z-10 overflow-hidden">
-          <Vortex
-            backgroundColor="transparent"
-            className="flex size-full"
-            rangeY={300}
-            baseRadius={2}
-            particleCount={20}
-            rangeSpeed={1.5}
-          />
-        </div>
       </PageHeader>
 
       <section className="flex flex-col gap-4">
