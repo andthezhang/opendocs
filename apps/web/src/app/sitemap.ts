@@ -10,7 +10,7 @@ export default function sitemap(): Sitemap {
   const paths: Sitemap = [
     {
       url: absoluteUrl(`/`),
-      lastModified: new Date(),
+      lastModified: new Date().toISOString().split('T')[0],
 
       alternates: {
         languages: Object.fromEntries(
@@ -21,7 +21,7 @@ export default function sitemap(): Sitemap {
 
     {
       url: absoluteUrl(`/docs`),
-      lastModified: new Date(),
+      lastModified: new Date().toISOString().split('T')[0],
 
       alternates: {
         languages: Object.fromEntries(
@@ -37,7 +37,7 @@ export default function sitemap(): Sitemap {
 
     return {
       url: absoluteUrl(`/docs/${docSlug}`),
-      lastModified: new Date(),
+      lastModified: new Date().toISOString().split('T')[0],
 
       alternates: {
         languages: Object.fromEntries(
@@ -56,7 +56,7 @@ export default function sitemap(): Sitemap {
 
     return {
       url: absoluteUrl(`/blog/${postSlug}`),
-      lastModified: new Date(),
+      lastModified: new Date().toISOString().split('T')[0],
 
       alternates: {
         languages: Object.fromEntries(
